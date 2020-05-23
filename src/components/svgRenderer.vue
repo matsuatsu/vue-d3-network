@@ -14,6 +14,8 @@
             :d="linkPath(link)"
             :id="link.id"
             @click='emit("linkClick",[$event,link])'
+            @mouseover='emit("mouseOverLink",[$event,link])'
+            @mouseleave='emit("mouseLeaveLink",[$event,link])'
             @touchstart.passive='emit("linkClick",[$event,link])'
             v-bind='linkAttrs(link)'
             :class='linkClass(link.id)'
@@ -28,6 +30,8 @@
             :viewBox='svgIcon(node).attrs.viewBox'
             :width='getNodeSize(node, "width")'
             :height='getNodeSize(node, "height")'
+            @mouseover='emit("mouseOverNode",[$event,node])'
+            @mouseleave='emit("mouseLeaveNode",[$event,node])'
             :x='node.x - getNodeSize(node, "width") / 2'
             :y='node.y - getNodeSize(node, "height") / 2'
             :style='nodeStyle(node)'
@@ -41,6 +45,8 @@
           circle(v-else
           :key='key'
           :r="getNodeSize(node) / 2"
+          @mouseover='emit("mouseOverNode",[$event,node])'
+          @mouseleave='emit("mouseLeaveNode",[$event,node])'
           :cx="node.x"
           :cy="node.y"
           :style='nodeStyle(node)'
