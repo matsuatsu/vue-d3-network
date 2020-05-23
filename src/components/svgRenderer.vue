@@ -65,7 +65,7 @@
         text.node-label(v-for="node in nodes"
           :x='node.x + (getNodeSize(node) / 2) + (fontSize / 2)'
           :y='node.y + labelOffset.y'
-          :font-size="fontSize"
+          :font-size="node.fontSize || fontSize"
           :class='(node._labelClass) ? node._labelClass : ""'
           :stroke-width='fontSize / 8'
         ) {{ node.name }}

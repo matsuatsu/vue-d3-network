@@ -129,6 +129,7 @@ import D3Network from 'vue-d3-network'
 - **_labelClass**: node label css class name
 - **svgSym**: node icon, svg document (only works in svg renderer)
 - **_size** : node size *(svg renderer only)*
+- **_fontSize** : font size *(svg renderer only)*
 - **_width**: node width *(svg renderer only)*
 - **_height**: node height *(svg renderer only)*
 - **_svgAttrs**: Object, svg node attributes
